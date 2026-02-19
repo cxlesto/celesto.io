@@ -1,4 +1,0 @@
-collections:
-  my_collection:
-    output: true
-    permalink: /:collection/:name/
