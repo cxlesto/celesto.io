@@ -1,0 +1,24 @@
+{
+  "name": "celesto.io",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/cxlesto/celesto.io#readme",
+  "bugs": {
+    "url": "https://github.com/cxlesto/celesto.io/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cxlesto/celesto.io.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "socket.io": "^4.8.3",
+    "ws": "^8.19.0"
+  }
+}
