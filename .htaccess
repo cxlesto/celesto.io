@@ -1,1 +1,2 @@
-Redirect 301 /favicon.ico /images/favicon.png
+RewriteEngine On
+RewriteRule ^favicon\.ico$ /images/favicon.png [L,R=301]
