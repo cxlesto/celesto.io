@@ -1,11 +1,18 @@
-import { createServer } from 'http';
+import https from 'https';
 import { Server } from 'socket.io';
+import fs from 'fs';
 
-const server = createServer();
+let options = {
+  key: fs.readFileSync('./certs/private.key.pem'),
+  cert: fs.readFileSync('certs/domain.cert.pem'),
+}
+
+const server = https.createServer(options, (req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Socket.IO server is running.\n');
+});
 const io = new Server(server, {
-  cors: {
-    origin: '*',
-  },
+  cors: { origin: '*' }
 });
 
 io.on('connection', (socket) => {
@@ -23,5 +30,5 @@ io.on('connection', (socket) => {
 
 const port = 24990;
 server.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Listening on port ${port}`);
 });
