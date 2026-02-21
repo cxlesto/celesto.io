@@ -9,6 +9,6 @@ app.get("/", (req, res) => {
 });
 
 const port = 12106;
-server.listen(port, "85.215.159.4", () => {
-  console.log(`Server is running on http://85.215.159.4:${port}`);
+server.listen(port, "0.0.0.0", () => {
+  console.log(`Server is running on http://0.0.0.0:${port}`);
 });
