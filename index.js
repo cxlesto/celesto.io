@@ -1,11 +1,14 @@
-import { createServer } from 'http';
+import express from "express";
+import { createServer } from "http";
 
-const server = createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello World!\n');
+const app = express();
+const server = createServer(app);
+
+app.get("/", (req, res) => {
+  res.send("<h1>Hello, World!</h1>");
 });
 
 const port = 12106;
-server.listen(port, () => {
-  console.log(`Listening on 127.0.0.1:${port}`);
+server.listen(port, "85.215.159.4", () => {
+  console.log(`Server is running on http://85.215.159.4:${port}`);
 });
